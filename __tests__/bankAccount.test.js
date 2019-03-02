@@ -55,6 +55,7 @@ describe('checks withdrawals functionality', () => {
   it('throws an error if the balance after the attempted withdrawal is greater than the overdraft limit', () => {
     currentAccount.balance = -90;
     expect(() => currentAccount.withdraw(20)).toThrow('you have reached your overdraft limit, please contact us');
+    expect(currentAccount.balance).toEqual(-90);
   });
   it('expects the supplied withdrawal amount to create an entry in the withdrwals array equal to the supplied amount', () => {
     expect(currentAccount.withdrawals).toEqual([2.99]);
@@ -68,8 +69,8 @@ describe('checks withdrawals functionality', () => {
   });
   it('expects the supplied withdrawal amount to be minused from the current account balance', () => {
     expect(currentAccount.balance).toEqual(10);
-    currentAccount.deposit(10);
-    expect(currentAccount.balance).toEqual(20);
+    currentAccount.withdraw(10);
+    expect(currentAccount.balance).toEqual(0);
   });
 });
 
