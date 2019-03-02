@@ -16,7 +16,7 @@ CurrentAccount.prototype.deposit = function deposit(amount) {
 };
 
 CurrentAccount.prototype.withdraw = function withdraw(amount) {
-  if (this.balance - amount < OVERDRAFT_LIMIT) {
+  if ((this.balance - amount) < OVERDRAFT_LIMIT) {
     throw new Error('you have reached your overdraft limit, please contact us');
   } else {
     this.balance -= amount;
