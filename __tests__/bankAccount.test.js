@@ -73,6 +73,3 @@ describe('checks withdrawals functionality', () => {
     expect(currentAccount.balance).toEqual(0);
   });
 });
-
-// Implement something that checks if the blance is greter than -100, throw error if a qithdrawal
-// is attempted saying 'you have reached your overdraft limit, please contact us'
