@@ -1,0 +1,1 @@
+A JS project to allow a bank to create customer current acounts
